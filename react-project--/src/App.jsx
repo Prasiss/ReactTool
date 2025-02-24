@@ -25,7 +25,9 @@ function App() {
   const [status, toggole] = useReducer(
     (status) => !status,
     true);
-
+  useEffect(() => {
+    console.log(`The resturant is ${status ? "open" : "close"}.`)
+  })
   return (
     <div>
       <h1>

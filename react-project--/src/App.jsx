@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useReducer } from 'react';
 import './App.css'
 
-function Header(props){
+function Header(props) {
   console.log(props);
   return (
     <header>
@@ -9,34 +9,37 @@ function Header(props){
     </header>
   );
 }
-function Footer(prop){
+function Footer(prop) {
   return (
     <footer>
-      
+
       <p>This is a footer
-      <span>Copyright {prop.year}</span>
+        <span>Copyright {prop.year}</span>
       </p>
     </footer>
   )
 }
 
 function App() {
-  const [status, setstatus]= useState(true);
-  
+  // const [status, setstatus]= useState(true);
+  const [status, toggole] = useReducer(
+    (status) => !status,
+    true);
+
   return (
     <div>
       <h1>
-        The website is currently{" "} 
+        The website is currently{" "}
         {status ? "Opened" : "Closed"}
       </h1>
-      <button onClick={() => setstatus(!status)}>
+      <button onClick={toggole}>
         {status ? "Close" : "Open"} Restaurant
       </button>
       <Header name="Prasim" />
       <Footer year={new Date().getFullYear()} />
     </div>
-    );
-  
+  );
+
 
 }
 

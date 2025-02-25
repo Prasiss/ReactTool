@@ -1,18 +1,25 @@
-import {inter} from "next/font/google";
+import {Inter} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
-const inter=Inter({subsets:["latin"]});
+const inter= Inter({subsets:["latin"]});
+
 function Header(){
   return (
-    <header>
-      <div>
-        <nav>
-          <div>
+    <header class="bg-slate-500 py-4">
+      <div class="Container mx-auto px-4">
+        <nav class ="flex items-centre justify-between">
+          <div className="flex items-center">
             <Link href="/"> Abcdef</Link>
           </div>
           <div>
             <Link href="/mountain"> Mountain Info</Link>
+          </div>
+          <div>
+            <Link href="/hotels"> Hotel  Info</Link>
+          </div>
+          <div>
+            <Link href="/contact"> Contact Us</Link>
           </div>
         </nav>
         
@@ -30,7 +37,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={inter.className} > {children}
+        <Header />
       </body>
+      
     </html>
   );
 }

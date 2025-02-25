@@ -1,7 +1,7 @@
 export default function Page() {
     return (
         <main>
-            <h1>THis is a mountain info page</h1>
+            <h1> contact Us</h1>
         </main>
     );
 }

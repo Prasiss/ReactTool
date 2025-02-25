@@ -1,14 +1,15 @@
-import {Inter} from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
-const inter= Inter({subsets:["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
-function Header(){
+function Header() {
   return (
+
     <header class="bg-slate-500 py-4">
-      <div class="Container mx-auto px-4">
-        <nav class ="flex items-centre justify-between">
+      <div className="Container mx-auto px-4">
+        <nav class="flex items-centre justify-between">
           <div className="flex items-center">
             <Link href="/"> Abcdef</Link>
           </div>
@@ -22,9 +23,9 @@ function Header(){
             <Link href="/contact"> Contact Us</Link>
           </div>
         </nav>
-        
       </div>
     </header>
+
   );
 }
 export const metadata = {
@@ -35,11 +36,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Header />
       <body
         className={inter.className} > {children}
-        <Header />
       </body>
-      
+
     </html>
   );
 }
